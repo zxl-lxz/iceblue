@@ -1,8 +1,10 @@
 <template>
   <div class="ice-team">
-    <el-carousel :interval="5000" arrow="always" height="600px">
-        <el-carousel-item v-for="item in 4" :key="item">
-            <h3>{{ item }}</h3>
+    <el-carousel :interval="5000" arrow="always" height="100%">
+        <el-carousel-item v-for="item in items" :key="item">
+          <div class="img-wrapper" v-popover:popover1>
+            <img :src="item" >
+          </div>
         </el-carousel-item>
     </el-carousel>
   </div>
@@ -10,26 +12,28 @@
 
 <script type="text/ecmascript6">
 export default {
-  
+  data() {
+    return {
+      items: {
+        pic1: 'http://og3j4ihx8.bkt.clouddn.com/b.jpg',
+        pic2: 'http://og3j4ihx8.bkt.clouddn.com/c.jpg',
+        pic3: 'http://og3j4ihx8.bkt.clouddn.com/d.jpg',
+        pic4: 'http://og3j4ihx8.bkt.clouddn.com/f.jpg'
+      }
+    }
+  }
 }
 </script>
 
 <style scoped>
-	.el-carousel__item h3 {
-    color: #475669;
-    font-size: 18px;
-    opacity: 0.75;
-    line-height: 300px;
-    margin: 0;
-  }
-  
-  .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
-  }
-  
-  .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
-  }
+.img-wrapper {
+  width: 100%;
+  height: 100%;
+}
+.el-carousel__item img {
+  width: 100%;
+  height: 100%;
+}
 </style>
 
 
