@@ -1,8 +1,8 @@
 <template>
-  <div class="ice-team">
+  <div class="ice-team" id="first">
     <el-carousel :interval="5000" arrow="always" height="100%">
         <el-carousel-item v-for="item in items" :key="item">
-          <div class="img-wrapper" v-popover:popover1>
+          <div class="img-wrapper">
             <img :src="item" >
           </div>
         </el-carousel-item>
@@ -10,9 +10,9 @@
   </div>
 </template>
 
-<script type="text/ecmascript6">
+<script>
 export default {
-  data() {
+  data () {
     return {
       items: {
         pic1: 'http://og3j4ihx8.bkt.clouddn.com/b.jpg',
@@ -26,6 +26,9 @@ export default {
 </script>
 
 <style scoped>
+div {
+  height: 100%;
+}
 .img-wrapper {
   width: 100%;
   height: 100%;
@@ -35,5 +38,3 @@ export default {
   height: 100%;
 }
 </style>
-
-

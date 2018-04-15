@@ -1,15 +1,15 @@
 <template>
-  <div class="ice-header">
+  <div class="ice-header" id="header">
     <el-row>
       <el-col :span="24">
           <div class="main">
             <h1 class="logo"><a href="">ICE  BLUE</a></h1>
               <ul>
-                <li><a href="">首页</a></li>
-                <li><a href="">团队</a></li>
-                <li><a href="">成果</a></li>
+                <li><a href="#first">首页</a></li>
+                <li><a href="#first">团队</a></li>
+                <li><a href="#iceAch">成果</a></li>
                 <li><a href="">关于</a></li>
-                <li><a href="">加入</a></li>
+                <li><a href="#join">加入</a></li>
                 <li><a href="">IceHub</a></li>
               </ul>
           </div>
@@ -19,7 +19,21 @@
 </template>
 
 <script type="text/javascript">
-export default {}
+export default {
+  created () {
+    window.onscroll = function () {
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
+      const Ohead = document.getElementById('header')
+      if (scrollTop > 700) {
+        Ohead.style.background = 'rgba(255, 255, 255, 0.9)'
+        Ohead.style.borderBottom = '1px solid grey'
+      } else {
+        Ohead.style.background = ''
+        Ohead.style.borderBottom = ''
+      }
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -29,6 +43,8 @@ export default {}
   position: fixed;
   top: 0;
   z-index: 999;
+  /*background: rgba(255,255,255,0.7);*/
+  /*border-bottom: 1px solid grey;*/
 }
 .el-row {
   width: 100%;
