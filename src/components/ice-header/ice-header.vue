@@ -1,88 +1,38 @@
-<template>
-  <div class="ice-header" id="header">
-    <el-row>
-      <el-col :span="24">
-          <div class="main">
-            <h1 class="logo"><a href="">ICE  BLUE</a></h1>
-              <ul>
-                <li><a href="#first">首页</a></li>
-                <li><a href="#first">团队</a></li>
-                <li><a href="#iceAch">成果</a></li>
-                <li><a href="">关于</a></li>
-                <li><a href="#join">加入</a></li>
-                <li><a href="">IceHub</a></li>
-              </ul>
-          </div>
-      </el-col>
-    </el-row>
-  </div>
+<template src="./index.html">
 </template>
 
-<script type="text/javascript">
+<script type="text/ecmascript-6">
 export default {
+  data () {
+    return {
+    }
+  },
   created () {
-    window.onscroll = function () {
-      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop
-      const Ohead = document.getElementById('header')
-      if (scrollTop > 700) {
-        Ohead.style.background = 'rgba(255, 255, 255, 0.9)'
-        Ohead.style.borderBottom = '1px solid grey'
+    window.onmousewheel = function () {
+      if ($('.ice-team').offset().top < (window.innerHeight)/2) {
+        $('.ice-header').addClass('change-bacg')
       } else {
-        Ohead.style.background = ''
-        Ohead.style.borderBottom = ''
+        $('.ice-header').removeClass('change-bacg')
       }
     }
+  },
+  methods: {
+    changeBac () {
+      $('.ice-header').addClass('change-bacg')
+    },
+    backChange () {
+      $('.ice-header').removeClass('change-bacg')
+    },
+    expectPlease () {
+      this.$alert('敬请期待', '温馨提示', {
+        confirmButtonText: '确定'
+      });
+    }
+  },
+  watch: {
   }
 }
 </script>
 
-<style scoped>
-.ice-header {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0;
-  z-index: 999;
-  /*background: rgba(255,255,255,0.7);*/
-  /*border-bottom: 1px solid grey;*/
-}
-.el-row {
-  width: 100%;
-  height: 100px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-}
-.ice-header a:hover {
-  text-decoration: none;
-}
-.main {
-  width: 60%;
-  height: 100px;
-  margin: 0 auto;
-}
-.logo {
-  height: 100px;
-  float: left;
-  line-height: 100px;
-}
-.logo a {
-  font-family: 'Antique Olive';
-  font-size: 36px;
-  font-weight: bolder;
-  color: #409eff;
-}
-ul {
-  float: right;
-  line-height: 100px;
-}
-ul li {
-  display: inline-block;
-  padding-left: 30px;
-}
-ul li a {
-  font-size: 16px;
-  color: #409eff;
-}
+<style lang="less" rel="stylesheet/less" src="./index.less" scoped>
 </style>

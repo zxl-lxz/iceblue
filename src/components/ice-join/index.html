@@ -1,0 +1,66 @@
+<div class="join" id="join">
+    <p class="text">加入我们</p>
+    <p class="text eng">Join Us</p>
+    <p class="text">如果你喜欢互联网</p>
+    <p class="text">如果你对这些满怀热情</p>
+    <div class="icon-wrapper">
+        <el-row>
+            <el-col :span="6" v-for="(item, index) in iconLists" :key="index">
+                <i class="iconfont" :class="item.iconName"></i>
+                <p>{{item.name}}</p>
+            </el-col>
+        </el-row>
+    </div>
+    <p class="text">我们随时欢迎你的加入</p>
+    <a href="#" class="join-btn" @click="formShow = true">点我加入</a>
+    <el-dialog title="告诉我们你的情况" :visible.sync="formShow">
+        <el-form ref="form" :model="form" label-width="100px" :rules="rules">
+            <el-form-item label="姓名" prop="name">
+                <el-input v-model="form.name"></el-input>
+            </el-form-item>
+            <el-form-item label="学校" prop="school">
+                <el-input v-model="form.school"></el-input>
+            </el-form-item>
+            <el-form-item label="专业" prop="major">
+                <el-input v-model="form.major"></el-input>
+            </el-form-item>
+            <el-form-item label="在校时间" required>
+                <el-col :span="11">
+                  <el-form-item prop="start_time">
+                    <el-date-picker type="date" placeholder="入校时间" v-model="form.start_time" style="width: 100%;"></el-date-picker>
+                  </el-form-item>
+                </el-col>
+                <el-col class="line" :span="2">-</el-col>
+                <el-col :span="11">
+                  <el-form-item prop="end_time">
+                    <el-date-picker type="date" placeholder="毕业时间" v-model="form.end_time" style="width: 100%;"></el-date-picker>
+                  </el-form-item>
+                </el-col>
+            </el-form-item>
+            <el-form-item label="性别" prop="sex">
+                <el-select v-model="form.sex" placeholder="请选择性别">
+                    <el-option label="帅哥" value="man"></el-option>
+                    <el-option label="美女" value="women"></el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="兴趣方向" prop="interest">
+                <el-checkbox-group v-model="form.interest">
+                    <el-checkbox label="前端开发FED" name="interest"></el-checkbox>
+                    <el-checkbox label="后端开发" name="interest"></el-checkbox>
+                    <el-checkbox label="UI设计师" name="interest"></el-checkbox>
+                    <el-checkbox label="PM产品经理" name="interest"></el-checkbox>
+                </el-checkbox-group>
+            </el-form-item>
+            <el-form-item label="电话号码" prop="tel">
+                <el-input v-model="form.tel"></el-input>
+            </el-form-item>
+            <el-form-item label="聊聊自己" prop="message">
+                <el-input type="textarea" v-model="form.message"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="onSubmit">提交</el-button>
+                <el-button @click="close">取消</el-button>
+            </el-form-item>
+        </el-form>
+    </el-dialog>
+</div>

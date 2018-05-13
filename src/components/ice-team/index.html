@@ -1,0 +1,17 @@
+<div class="ice-team" id="iceTeam">
+  <div class="wrapper">
+    <h4>关于我们的团队</h4>
+    <div class="line"></div>
+    <el-carousel indicator-position="none" height="1.2em" class="no-padding-car" arrow="never">
+      <el-carousel-item v-for="item in textLists" :key="item">
+        <span>{{item}}</span>
+      </el-carousel-item>
+    </el-carousel>
+    <div class="line fumagin"></div>
+    <el-carousel indicator-position="none" type="card" class="card-el-car" height="10em" arrow="never">
+      <el-carousel-item v-for="(item, index) in teamLists" :key="index">
+        <img :src="item.img">
+      </el-carousel-item>
+    </el-carousel>
+  </div>
+</div> 

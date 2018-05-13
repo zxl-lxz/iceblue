@@ -1,0 +1,24 @@
+<div class="ice-first" id="first">
+  <div class="img-wrapper">
+    <el-carousel :interval="3000" arrow="never" indicator-position="none">
+      <el-carousel-item v-for="(item, index) in items" :key="index">
+          <div class="inner">
+            <p class="title">{{item.title}}</p>
+            <p class="text">冰蓝工作室</p>
+            <p class="text">{{item.text}}</p>
+          </div>
+      </el-carousel-item>
+    </el-carousel>
+    <div class="qrwrapper">
+      <img class="qr-code" src="http://og3j4ihx8.bkt.clouddn.com/1525937279528.png" alt="二维码">
+      <p><a href="#join" @click="changeBac">加入我们</a></p>
+    </div>
+    <a href="#iceTeam">
+      <div class="arrow_up" @click="changeBac">  
+        <span></span>  
+        <span></span>  
+      </div>
+    </a> 
+</div>
+<div class="layer"></div>
+</div>

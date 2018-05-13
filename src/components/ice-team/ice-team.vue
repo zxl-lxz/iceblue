@@ -1,40 +1,47 @@
-<template>
-  <div class="ice-team" id="first">
-    <el-carousel :interval="5000" arrow="always" height="100%">
-        <el-carousel-item v-for="item in items" :key="item">
-          <div class="img-wrapper">
-            <img :src="item" >
-          </div>
-        </el-carousel-item>
-    </el-carousel>
-  </div>
+<template src="./index.html">
 </template>
 
-<script>
+<script type="text/ecmascript-6">
 export default {
   data () {
     return {
-      items: {
-        pic1: 'http://og3j4ihx8.bkt.clouddn.com/b.jpg',
-        pic2: 'http://og3j4ihx8.bkt.clouddn.com/c.jpg',
-        pic3: 'http://og3j4ihx8.bkt.clouddn.com/d.jpg',
-        pic4: 'http://og3j4ihx8.bkt.clouddn.com/f.jpg'
-      }
+      teamLists: [
+        {
+          desc: 'This is some detail',
+          img: 'http://og3j4ihx8.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720160509114935.jpg'
+        },
+        {
+          desc: 'This is some detail',
+          img: 'http://og3j4ihx8.bkt.clouddn.com/IMG_20180513_103945.jpg'
+        },
+        {
+          desc: 'This is some detail',
+          img: 'http://og3j4ihx8.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720180513102631.jpg'
+        },
+        {
+          desc: 'This is some detail',
+          img: 'http://og3j4ihx8.bkt.clouddn.com/QQ%E5%9B%BE%E7%89%8720180513102724.jpg'
+        }
+      ],
+      textLists: [
+        '校企合作模式',
+        '环境舒适的工作室',
+        '共同的学习目标',
+        '专业的技术知识',
+        '往届学长学姐经验指导',
+        '珍贵的内推机会',
+        '活跃的团建氛围',
+        '有爱的教师团队'
+      ]
     }
+  },
+  created () {
+    $('.card').css('height', '10em');
   }
 }
 </script>
 
-<style scoped>
-div {
-  height: 100%;
-}
-.img-wrapper {
-  width: 100%;
-  height: 100%;
-}
-.el-carousel__item img {
-  width: 100%;
-  height: 100%;
-}
+<style lang="less" src="./index.less" scoped>
 </style>
+
+

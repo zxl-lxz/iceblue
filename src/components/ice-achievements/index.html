@@ -1,0 +1,34 @@
+
+<div class="ice-ach" id="iceAch">
+  <p class="title">每 一 个 项 目 我 们 都 一 定 全 力 以 赴</p>
+  <div class="wrapper">
+    <el-row>
+      <el-col :span="12" v-for="(item, index) in topCardList" :key="index">
+        <div class="main">
+          <div class="left">
+            <i class="iconfont" :class="item.iconName" :style="{color: item.color}"></i>
+          </div>
+          <div class="right">
+            <h4 class="ach-name">{{item.defaultDesc}}</h4>
+            <p class="eng-name">{{item.english}}</p>
+            <p class="detail">{{item.activeDesc}}</p>
+          </div>
+        </div>
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col :span="12" v-for="(item, index) in botCardList" :key="index" class="need-margin-el-col">
+          <div class="main">
+            <div class="left">
+              <i class="iconfont" :class="item.iconName" :style="{color: item.color}"></i>
+            </div>
+            <div class="right">
+              <h4 class="ach-name">{{item.defaultDesc}}</h4>
+              <p class="eng-name">{{item.english}}</p>
+              <p class="detail">{{item.activeDesc}}</p>
+            </div>
+          </div>
+        </el-col>
+    </el-row>
+  </div>
+</div>
