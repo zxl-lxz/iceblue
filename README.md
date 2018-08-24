@@ -1,7 +1,7 @@
 毕业设计\
 很简单的Vue单文件组件初步使用\
 全局引入了less、Zepto、iconfont
-# 在Vue项目里面全局引入Zepto.js
+### 在Vue项目里面全局引入Zepto.js
 采用`npm`的方式安装`zepto`
 ```
 npm i zepto -S
@@ -29,7 +29,7 @@ module: {
 }
 ```
 配置好之后，在`main.js`里面引入即可。
-# Vue项目里面使用阿里巴巴矢量图标
+### Vue项目里面使用阿里巴巴矢量图标
 - 添加购物车
 - 下载代码
 - 在`assets`目录文件下创建`font`文件夹
@@ -38,7 +38,15 @@ module: {
 ```
 import './assets/font/iconfont.css'
 ```
-- 接下来就可以使用类名显示想要的图标了\
+- 接下来就可以使用类名显示想要的图标了
+### 全局引入Less
+`webpack.base.conf.js`里面配置如下
+```js
+{
+test: /\.less$/,
+loader: "style-loader!css-loader!less-loader",
+}
+```
 网址：[冰蓝工作室](http://www.binglan.org/)
 
 # Run
