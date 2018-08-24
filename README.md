@@ -38,8 +38,8 @@ module: {
 ```
 import './assets/font/iconfont.css'
 ```
-- 接下来就可以使用类名显示想要的图标了
-网址：[冰蓝工作室](www.binglan.org)
+- 接下来就可以使用类名显示想要的图标了\
+网址：[冰蓝工作室](http://www.binglan.org/)
 
 # Run
 `npm run dev`
